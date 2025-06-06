@@ -1,0 +1,136 @@
+body {
+    background-color: #0A0A0A;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FFD700, #8A2BE2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+}
+
+.beat-player {
+    height: 80px;
+    background: #111111;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 10px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #FFD700, #8A2BE2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.waveform {
+    flex-grow: 1;
+    height: 30px;
+    background: linear-gradient(90deg, 
+        rgba(138, 43, 226, 0.3) 10%, 
+        rgba(255, 215, 0, 0.3) 30%, 
+        rgba(138, 43, 226, 0.3) 50%, 
+        rgba(255, 215, 0, 0.3) 70%, 
+        rgba(138, 43, 226, 0.3) 90%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.waveform::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.2) 2px,
+        rgba(255,255,255,0.2) 4px
+    );
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #FFD700, #8A2BE2);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.plan-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.plan-card:hover {
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+.featured-plan {
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: linear-gradient(45deg, #FFD700, #8A2BE2);
+    color: #000;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
